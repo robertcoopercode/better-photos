@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		180FD957F2F3BF04DEB596FA /* TagSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E10A9D10851B134C7A9F91E /* TagSuggestion.swift */; };
+		22D87729E7536B8878CFB01A /* PhotoAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77885527B99358AD80886F93 /* PhotoAsset.swift */; };
+		3DA24A9D0A816D13CE8827E6 /* TagPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73493165ACD7FABCF704A3CF /* TagPanelView.swift */; };
+		451888CE4D5780F2F74EA34E /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2096EEAAF0AEDE7E341A94A /* PhotoLibraryService.swift */; };
+		68AA86D9F888CAED06DCE81C /* PhotosAppMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D609E0E3FD0C76200FB71D /* PhotosAppMonitor.swift */; };
+		81451563F20D3DF9BB6416D7 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10788C2DFE2EBFE8228B413 /* Album.swift */; };
+		9A78FB33FACD9DD8104072C2 /* PhotosDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097BD58AC39ED0A66FF1D601 /* PhotosDatabaseService.swift */; };
+		A912B052205E078F86D506A2 /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E654807781F7777A503AA604 /* PhotoGridView.swift */; };
+		B02F1B3C99A35F54003561E4 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496920B0D7FC3D82C3B945AF /* SidebarView.swift */; };
+		BD81ED1ECBEFE625CF849619 /* ThumbnailCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3493BE90EAC52F7CA44CDA /* ThumbnailCache.swift */; };
+		C57DA79C8FCC52DA7C584382 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22A341DD0ABF7FE56892692 /* ContentView.swift */; };
+		C8371DE572E92F4D9DC7DB2A /* AppleScriptKeywordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1374ECC691D06E764748819A /* AppleScriptKeywordService.swift */; };
+		CE72C035895951C491DF1951 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C709A4F359FBD084CE94C8 /* SettingsView.swift */; };
+		D977C293F810B7D8034B9872 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F917BB029EC343A951DC3 /* AppState.swift */; };
+		EE0F9B350189F560232ED410 /* VisionTaggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC62D4FC5129D9B76652E90B /* VisionTaggingService.swift */; };
+		F1E90A5F9B8D9DBEFC6272D8 /* BetterPhotosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2D26F516C65783E24B197 /* BetterPhotosApp.swift */; };
+		A9B8C7D6E5F4A3B2C1D0E9F8 /* TagRecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8B2C6E1F59A3B7C0D4E8F /* TagRecommendationService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		097BD58AC39ED0A66FF1D601 /* PhotosDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDatabaseService.swift; sourceTree = "<group>"; };
+		1374ECC691D06E764748819A /* AppleScriptKeywordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptKeywordService.swift; sourceTree = "<group>"; };
+		1CD2D26F516C65783E24B197 /* BetterPhotosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterPhotosApp.swift; sourceTree = "<group>"; };
+		1E10A9D10851B134C7A9F91E /* TagSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSuggestion.swift; sourceTree = "<group>"; };
+		478F917BB029EC343A951DC3 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		496920B0D7FC3D82C3B945AF /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		73493165ACD7FABCF704A3CF /* TagPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPanelView.swift; sourceTree = "<group>"; };
+		77885527B99358AD80886F93 /* PhotoAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAsset.swift; sourceTree = "<group>"; };
+		88D609E0E3FD0C76200FB71D /* PhotosAppMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAppMonitor.swift; sourceTree = "<group>"; };
+		9F3493BE90EAC52F7CA44CDA /* ThumbnailCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCache.swift; sourceTree = "<group>"; };
+		B10788C2DFE2EBFE8228B413 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		C086AC3A8F68ADCB44FACA3A /* BetterPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2096EEAAF0AEDE7E341A94A /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
+		C7C709A4F359FBD084CE94C8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E654807781F7777A503AA604 /* PhotoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridView.swift; sourceTree = "<group>"; };
+		F22A341DD0ABF7FE56892692 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC62D4FC5129D9B76652E90B /* VisionTaggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionTaggingService.swift; sourceTree = "<group>"; };
+		D4A8B2C6E1F59A3B7C0D4E8F /* TagRecommendationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRecommendationService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0F843CAE0CF2AC9828552CE7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B10788C2DFE2EBFE8228B413 /* Album.swift */,
+				478F917BB029EC343A951DC3 /* AppState.swift */,
+				77885527B99358AD80886F93 /* PhotoAsset.swift */,
+				1E10A9D10851B134C7A9F91E /* TagSuggestion.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		240F4F9DC1F8A99EFB97AB5B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1CD2D26F516C65783E24B197 /* BetterPhotosApp.swift */,
+				0F843CAE0CF2AC9828552CE7 /* Models */,
+				472BE66C50E965A67818B078 /* Services */,
+				52FF6C26A01E0270ECB5F4E0 /* Utilities */,
+				2C8EE050A0C114F631BFD2D6 /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2C8EE050A0C114F631BFD2D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F22A341DD0ABF7FE56892692 /* ContentView.swift */,
+				E654807781F7777A503AA604 /* PhotoGridView.swift */,
+				C7C709A4F359FBD084CE94C8 /* SettingsView.swift */,
+				496920B0D7FC3D82C3B945AF /* SidebarView.swift */,
+				73493165ACD7FABCF704A3CF /* TagPanelView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		472BE66C50E965A67818B078 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1374ECC691D06E764748819A /* AppleScriptKeywordService.swift */,
+				C2096EEAAF0AEDE7E341A94A /* PhotoLibraryService.swift */,
+				88D609E0E3FD0C76200FB71D /* PhotosAppMonitor.swift */,
+				097BD58AC39ED0A66FF1D601 /* PhotosDatabaseService.swift */,
+				D4A8B2C6E1F59A3B7C0D4E8F /* TagRecommendationService.swift */,
+				9F3493BE90EAC52F7CA44CDA /* ThumbnailCache.swift */,
+				FC62D4FC5129D9B76652E90B /* VisionTaggingService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5224DAE36245C1B2BDD17BB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C086AC3A8F68ADCB44FACA3A /* BetterPhotos.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52FF6C26A01E0270ECB5F4E0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9C5759729465AA532C1D6168 /* BetterPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				240F4F9DC1F8A99EFB97AB5B /* Sources */,
+			);
+			path = BetterPhotos;
+			sourceTree = "<group>";
+		};
+		CCB677D8D9CC869D3AEB8EA5 = {
+			isa = PBXGroup;
+			children = (
+				9C5759729465AA532C1D6168 /* BetterPhotos */,
+				5224DAE36245C1B2BDD17BB9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2768E710FA0D9F6EF176FD5B /* BetterPhotos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44B639FC5BCB900BFDB7C444 /* Build configuration list for PBXNativeTarget "BetterPhotos" */;
+			buildPhases = (
+				01C7458AD47F19E33FA033A6 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BetterPhotos;
+			packageProductDependencies = (
+			);
+			productName = BetterPhotos;
+			productReference = C086AC3A8F68ADCB44FACA3A /* BetterPhotos.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5ADBB1C351F1F7CA6B830757 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2768E710FA0D9F6EF176FD5B = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EBD7C27D6C1A35AAA5C60DA2 /* Build configuration list for PBXProject "BetterPhotos" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CCB677D8D9CC869D3AEB8EA5;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2768E710FA0D9F6EF176FD5B /* BetterPhotos */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01C7458AD47F19E33FA033A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81451563F20D3DF9BB6416D7 /* Album.swift in Sources */,
+				D977C293F810B7D8034B9872 /* AppState.swift in Sources */,
+				C8371DE572E92F4D9DC7DB2A /* AppleScriptKeywordService.swift in Sources */,
+				F1E90A5F9B8D9DBEFC6272D8 /* BetterPhotosApp.swift in Sources */,
+				C57DA79C8FCC52DA7C584382 /* ContentView.swift in Sources */,
+				22D87729E7536B8878CFB01A /* PhotoAsset.swift in Sources */,
+				A912B052205E078F86D506A2 /* PhotoGridView.swift in Sources */,
+				451888CE4D5780F2F74EA34E /* PhotoLibraryService.swift in Sources */,
+				68AA86D9F888CAED06DCE81C /* PhotosAppMonitor.swift in Sources */,
+				9A78FB33FACD9DD8104072C2 /* PhotosDatabaseService.swift in Sources */,
+				CE72C035895951C491DF1951 /* SettingsView.swift in Sources */,
+				B02F1B3C99A35F54003561E4 /* SidebarView.swift in Sources */,
+				3DA24A9D0A816D13CE8827E6 /* TagPanelView.swift in Sources */,
+				180FD957F2F3BF04DEB596FA /* TagSuggestion.swift in Sources */,
+				BD81ED1ECBEFE625CF849619 /* ThumbnailCache.swift in Sources */,
+				A9B8C7D6E5F4A3B2C1D0E9F8 /* TagRecommendationService.swift in Sources */,
+				EE0F9B350189F560232ED410 /* VisionTaggingService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		282272098008BC98A9F64FB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = BetterPhotos;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		6F8000C6902E973A279E0CB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = BetterPhotos;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		96BA2E9DEB7FF020B0D9FE55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BetterPhotos/BetterPhotos.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SGT3ZU26ZF;
+				ENABLE_APP_SANDBOX = NO;
+				INFOPLIST_FILE = BetterPhotos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.betterphotos.app;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BB872A0CF3A79E852D713A16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BetterPhotos/BetterPhotos.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SGT3ZU26ZF;
+				ENABLE_APP_SANDBOX = NO;
+				INFOPLIST_FILE = BetterPhotos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.betterphotos.app;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		44B639FC5BCB900BFDB7C444 /* Build configuration list for PBXNativeTarget "BetterPhotos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96BA2E9DEB7FF020B0D9FE55 /* Debug */,
+				BB872A0CF3A79E852D713A16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EBD7C27D6C1A35AAA5C60DA2 /* Build configuration list for PBXProject "BetterPhotos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F8000C6902E973A279E0CB9 /* Debug */,
+				282272098008BC98A9F64FB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5ADBB1C351F1F7CA6B830757 /* Project object */;
+}
