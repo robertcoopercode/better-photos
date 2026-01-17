@@ -245,6 +245,66 @@ class PhotosDatabaseService {
         return people
     }
 
+    /// Returns UUIDs of photos/videos with no detected faces
+    func getPhotoUUIDsWithoutFaces() -> [String] {
+        guard let db = openDatabaseCopy() else {
+            return []
+        }
+        defer { sqlite3_close(db) }
+
+        let query = """
+            SELECT a.ZUUID FROM ZASSET a
+            WHERE a.ZKIND IN (0, 1)
+              AND (a.ZTRASHEDSTATE = 0 OR a.ZTRASHEDSTATE IS NULL)
+              AND (a.ZHIDDEN = 0 OR a.ZHIDDEN IS NULL)
+              AND NOT EXISTS (SELECT 1 FROM ZDETECTEDFACE f WHERE f.ZASSETFORFACE = a.Z_PK)
+            ORDER BY a.ZDATECREATED DESC
+        """
+
+        var statement: OpaquePointer?
+        guard sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK else {
+            return []
+        }
+        defer { sqlite3_finalize(statement) }
+
+        var uuids: [String] = []
+        while sqlite3_step(statement) == SQLITE_ROW {
+            if let uuidCString = sqlite3_column_text(statement, 0) {
+                uuids.append(String(cString: uuidCString))
+            }
+        }
+
+        return uuids
+    }
+
+    /// Returns count of photos/videos with no detected faces
+    func getPhotosWithoutFacesCount() -> Int {
+        guard let db = openDatabaseCopy() else {
+            return 0
+        }
+        defer { sqlite3_close(db) }
+
+        let query = """
+            SELECT COUNT(*) FROM ZASSET a
+            WHERE a.ZKIND IN (0, 1)
+              AND (a.ZTRASHEDSTATE = 0 OR a.ZTRASHEDSTATE IS NULL)
+              AND (a.ZHIDDEN = 0 OR a.ZHIDDEN IS NULL)
+              AND NOT EXISTS (SELECT 1 FROM ZDETECTEDFACE f WHERE f.ZASSETFORFACE = a.Z_PK)
+        """
+
+        var statement: OpaquePointer?
+        guard sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK else {
+            return 0
+        }
+        defer { sqlite3_finalize(statement) }
+
+        if sqlite3_step(statement) == SQLITE_ROW {
+            return Int(sqlite3_column_int(statement, 0))
+        }
+
+        return 0
+    }
+
     /// Fetches people/pets detected in a specific photo
     func getPeopleInPhoto(photoUUID: String) -> [PersonInfo] {
         guard let db = openDatabaseCopy() else {

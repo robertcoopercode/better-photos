@@ -170,6 +170,43 @@ actor AppleScriptKeywordService {
         return try await executeScript(script)
     }
 
+    /// Opens selected photos in Photos.app by creating a temporary album for tagging
+    /// The album is cleared and replaced each time to keep a clean slate
+    func openPhotosForTagging(photoIds: [String], albumName: String = "BetterPhotos - To Tag") async throws {
+        // Build list of photo IDs for AppleScript
+        let escapedIds = photoIds.map { "\"\(escapeForAppleScript($0))\"" }.joined(separator: ", ")
+        let escapedAlbumName = escapeForAppleScript(albumName)
+
+        let script = """
+        tell application "Photos"
+            activate
+
+            -- Delete existing album if it exists
+            try
+                set existingAlbum to album "\(escapedAlbumName)"
+                delete existingAlbum
+            end try
+
+            -- Create new album
+            set targetAlbum to make new album named "\(escapedAlbumName)"
+
+            -- Add photos to album
+            set photoIds to {\(escapedIds)}
+            repeat with photoId in photoIds
+                try
+                    set thePhoto to media item id photoId
+                    add {thePhoto} to targetAlbum
+                end try
+            end repeat
+
+            -- Select the album in the sidebar
+            delay 0.5
+        end tell
+        """
+
+        _ = try await executeScript(script)
+    }
+
     /// Fetches all unique keywords from the entire Photos library
     func getAllKeywords() async throws -> [String] {
         // Fast approach: get keywords property from all media items at once

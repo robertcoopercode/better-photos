@@ -219,6 +219,16 @@ struct ClickablePhotoThumbnail: View {
                 appState.selectPhoto(id: photo.id, index: index, modifiers: eventModifiers)
             }
         }
+        .contextMenu {
+            Button {
+                Task {
+                    await appState.sendSelectedPhotosToPhotosForTagging()
+                }
+            } label: {
+                Label("Send to Photos for Tagging", systemImage: "person.crop.rectangle.badge.plus")
+            }
+            .disabled(appState.selectedPhotoIds.isEmpty)
+        }
     }
 
     private func convertModifiers(_ flags: NSEvent.ModifierFlags) -> EventModifiers {

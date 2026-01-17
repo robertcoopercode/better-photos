@@ -82,6 +82,37 @@ class PhotoLibraryService {
         return assets
     }
 
+    func fetchPhotosWithoutFaces() async throws -> [PhotoAsset] {
+        // Get UUIDs of photos/videos with no detected faces from the database
+        let uuids = databaseService.getPhotoUUIDsWithoutFaces()
+
+        guard !uuids.isEmpty else {
+            return []
+        }
+
+        let options = PHFetchOptions()
+        options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        options.predicate = NSPredicate(format: "mediaType == %d OR mediaType == %d",
+                                         PHAssetMediaType.image.rawValue,
+                                         PHAssetMediaType.video.rawValue)
+
+        let allResults = PHAsset.fetchAssets(with: options)
+
+        // Create a set of UUIDs for fast lookup (case-insensitive)
+        let uuidSet = Set(uuids.map { $0.uppercased() })
+
+        var assets: [PhotoAsset] = []
+
+        allResults.enumerateObjects { asset, _, _ in
+            let assetUUID = (asset.localIdentifier.components(separatedBy: "/").first ?? "").uppercased()
+            if uuidSet.contains(assetUUID) {
+                assets.append(PhotoAsset(phAsset: asset))
+            }
+        }
+
+        return assets
+    }
+
     func fetchAlbums() async -> [Album] {
         var albums: [Album] = []
 

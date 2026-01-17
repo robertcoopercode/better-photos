@@ -9,6 +9,7 @@ struct SidebarView: View {
     var body: some View {
         List {
             allPhotosRow
+            withoutFacesRow
             albumsSection
             tagsSection
         }
@@ -21,10 +22,23 @@ struct SidebarView: View {
             title: "All Photos",
             icon: "photo.on.rectangle",
             count: appState.totalPhotoCount,
-            isSelected: appState.selectedAlbum == nil && appState.selectedKeyword == nil
+            isSelected: appState.selectedAlbum == nil && appState.selectedKeyword == nil && !appState.showPhotosWithoutFaces
         ) {
             Task {
                 await appState.selectAlbum(id: nil)
+            }
+        }
+    }
+
+    private var withoutFacesRow: some View {
+        SidebarRow(
+            title: "Without Faces",
+            icon: "person.crop.rectangle.badge.questionmark",
+            count: appState.photosWithoutFacesCount,
+            isSelected: appState.showPhotosWithoutFaces
+        ) {
+            Task {
+                await appState.selectPhotosWithoutFaces()
             }
         }
     }

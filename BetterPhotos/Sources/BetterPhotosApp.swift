@@ -63,6 +63,16 @@ struct PhotoCommands: Commands {
                 appState.clearSelection()
             }
             .keyboardShortcut(.escape, modifiers: [])
+
+            Divider()
+
+            Button("Send to Photos for Tagging") {
+                Task {
+                    await appState.sendSelectedPhotosToPhotosForTagging()
+                }
+            }
+            .keyboardShortcut("t", modifiers: [.command, .shift])
+            .disabled(appState.selectedPhotoIds.isEmpty)
         }
     }
 }

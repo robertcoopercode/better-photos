@@ -30,6 +30,10 @@ class AppState: ObservableObject {
     @Published var photoLibraryAuthorized = false
     @Published var totalPhotoCount: Int = 0
 
+    // MARK: - Photos Without Faces Filter
+    @Published var showPhotosWithoutFaces: Bool = false
+    @Published var photosWithoutFacesCount: Int = 0
+
     // MARK: - Selection
     @Published var selectedPhotoIds: Set<String> = []
     @Published var focusedPhotoId: String?
@@ -102,7 +106,13 @@ class AppState: ObservableObject {
             await loadAllKnownTags()
             await loadKeywordsWithCounts()
             await loadAllKnownPeople()
+            await loadPhotosWithoutFacesCount()
         }
+    }
+
+    /// Loads the count of photos without detected faces
+    private func loadPhotosWithoutFacesCount() async {
+        photosWithoutFacesCount = photosDatabaseService.getPhotosWithoutFacesCount()
     }
 
     /// Loads all keywords with their photo counts for the sidebar (including empty ones)
@@ -163,6 +173,8 @@ class AppState: ObservableObject {
                 photos = try await photoLibraryService.fetchPhotosFromAlbum(album)
             } else if let keyword = selectedKeyword {
                 photos = try await photoLibraryService.fetchPhotosByKeyword(keyword.keyword)
+            } else if showPhotosWithoutFaces {
+                photos = try await photoLibraryService.fetchPhotosWithoutFaces()
             } else {
                 photos = try await photoLibraryService.fetchAllPhotos()
                 totalPhotoCount = photos.count  // Update total count when viewing all photos
@@ -217,9 +229,11 @@ class AppState: ObservableObject {
         if let id = id {
             selectedAlbum = albums.first { $0.id == id }
             selectedKeyword = nil  // Clear keyword filter when selecting album
+            showPhotosWithoutFaces = false  // Clear faces filter when selecting album
         } else {
             selectedAlbum = nil
             selectedKeyword = nil
+            showPhotosWithoutFaces = false
         }
         await refreshPhotos()
     }
@@ -228,6 +242,7 @@ class AppState: ObservableObject {
         if let keyword = keyword {
             selectedKeyword = keywordsWithCounts.first { $0.keyword == keyword }
             selectedAlbum = nil  // Clear album filter when selecting keyword
+            showPhotosWithoutFaces = false  // Clear faces filter when selecting keyword
             // Clear multi-select when doing regular selection
             selectedKeywordIds = [keyword]
             if let index = keywordsWithCounts.firstIndex(where: { $0.keyword == keyword }) {
@@ -237,6 +252,7 @@ class AppState: ObservableObject {
             selectedKeyword = nil
             selectedKeywordIds.removeAll()
             lastSelectedKeywordIndex = nil
+            showPhotosWithoutFaces = false
         }
         await refreshPhotos()
     }
@@ -280,6 +296,31 @@ class AppState: ObservableObject {
         selectedKeywordIds.removeAll()
         selectedKeyword = nil
         lastSelectedKeywordIndex = nil
+    }
+
+    /// Select photos without faces filter
+    func selectPhotosWithoutFaces() async {
+        selectedAlbum = nil
+        selectedKeyword = nil
+        selectedKeywordIds.removeAll()
+        lastSelectedKeywordIndex = nil
+        showPhotosWithoutFaces = true
+        await refreshPhotos()
+    }
+
+    /// Send selected photos to Photos.app for tagging by creating a temporary album
+    func sendSelectedPhotosToPhotosForTagging() async {
+        let photoIds = Array(selectedPhotoIds)
+        guard !photoIds.isEmpty else { return }
+
+        isSyncing = true
+        defer { isSyncing = false }
+
+        do {
+            try await keywordService.openPhotosForTagging(photoIds: photoIds)
+        } catch {
+            showError(message: "Failed to send photos to Photos: \(error.localizedDescription)")
+        }
     }
 
     // MARK: - Renaming
