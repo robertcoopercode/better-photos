@@ -27,9 +27,9 @@ struct PhotoCommands: Commands {
 
     var body: some Commands {
         CommandGroup(after: .newItem) {
-            Button("Refresh Photos") {
+            Button("Resync with Database") {
                 Task {
-                    await appState.refreshPhotos()
+                    await appState.resyncWithDatabase()
                 }
             }
             .keyboardShortcut("r", modifiers: .command)

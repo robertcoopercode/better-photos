@@ -115,6 +115,28 @@ class AppState: ObservableObject {
         photosWithoutFacesCount = photosDatabaseService.getPhotosWithoutFacesCount()
     }
 
+    /// Full resync with the Photos SQLite database - refreshes all cached data
+    func resyncWithDatabase() async {
+        isLoadingPhotos = true
+        defer { isLoadingPhotos = false }
+
+        // Refresh all database-sourced data in parallel where possible
+        async let photosTask: () = refreshPhotos()
+        async let albumsTask: () = refreshAlbums()
+        async let tagsTask: () = loadAllKnownTags()
+        async let keywordsTask: () = loadKeywordsWithCounts()
+        async let peopleTask: () = loadAllKnownPeople()
+        async let facesCountTask: () = loadPhotosWithoutFacesCount()
+
+        // Wait for all tasks to complete
+        _ = await (photosTask, albumsTask, tagsTask, keywordsTask, peopleTask, facesCountTask)
+
+        // Clear caches to force fresh data on next selection
+        photoTagsCache.removeAll()
+        photoAlbumsCache.removeAll()
+        photoPeopleCache.removeAll()
+    }
+
     /// Loads all keywords with their photo counts for the sidebar (including empty ones)
     private func loadKeywordsWithCounts() async {
         var keywords = photosDatabaseService.getKeywordsWithCounts(includeEmpty: true)

@@ -75,6 +75,7 @@ struct MainLayout: View {
             ToolbarItemGroup(placement: .primaryAction) {
                 PhotosStatusIndicator()
                 SyncStatusIndicator()
+                RefreshButton()
             }
         }
         .overlay {
@@ -507,6 +508,22 @@ struct SyncStatusIndicator: View {
                     .foregroundColor(.secondary)
             }
         }
+    }
+}
+
+struct RefreshButton: View {
+    @EnvironmentObject var appState: AppState
+
+    var body: some View {
+        Button {
+            Task {
+                await appState.resyncWithDatabase()
+            }
+        } label: {
+            Image(systemName: "arrow.clockwise")
+        }
+        .disabled(appState.isLoadingPhotos)
+        .help("Resync with Photos database (⌘R)")
     }
 }
 
