@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		81451563F20D3DF9BB6416D7 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10788C2DFE2EBFE8228B413 /* Album.swift */; };
 		9A78FB33FACD9DD8104072C2 /* PhotosDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097BD58AC39ED0A66FF1D601 /* PhotosDatabaseService.swift */; };
 		A912B052205E078F86D506A2 /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E654807781F7777A503AA604 /* PhotoGridView.swift */; };
+		AD1E7638F45F7C82D490E505 /* TagRecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E2FE9C78FA766DE5FDF758 /* TagRecommendationService.swift */; };
 		B02F1B3C99A35F54003561E4 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496920B0D7FC3D82C3B945AF /* SidebarView.swift */; };
 		BD81ED1ECBEFE625CF849619 /* ThumbnailCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3493BE90EAC52F7CA44CDA /* ThumbnailCache.swift */; };
 		C57DA79C8FCC52DA7C584382 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22A341DD0ABF7FE56892692 /* ContentView.swift */; };
@@ -23,7 +24,6 @@
 		D977C293F810B7D8034B9872 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F917BB029EC343A951DC3 /* AppState.swift */; };
 		EE0F9B350189F560232ED410 /* VisionTaggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC62D4FC5129D9B76652E90B /* VisionTaggingService.swift */; };
 		F1E90A5F9B8D9DBEFC6272D8 /* BetterPhotosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2D26F516C65783E24B197 /* BetterPhotosApp.swift */; };
-		A9B8C7D6E5F4A3B2C1D0E9F8 /* TagRecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8B2C6E1F59A3B7C0D4E8F /* TagRecommendationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,13 +38,13 @@
 		88D609E0E3FD0C76200FB71D /* PhotosAppMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAppMonitor.swift; sourceTree = "<group>"; };
 		9F3493BE90EAC52F7CA44CDA /* ThumbnailCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCache.swift; sourceTree = "<group>"; };
 		B10788C2DFE2EBFE8228B413 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		B5E2FE9C78FA766DE5FDF758 /* TagRecommendationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRecommendationService.swift; sourceTree = "<group>"; };
 		C086AC3A8F68ADCB44FACA3A /* BetterPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2096EEAAF0AEDE7E341A94A /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
 		C7C709A4F359FBD084CE94C8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E654807781F7777A503AA604 /* PhotoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridView.swift; sourceTree = "<group>"; };
 		F22A341DD0ABF7FE56892692 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FC62D4FC5129D9B76652E90B /* VisionTaggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionTaggingService.swift; sourceTree = "<group>"; };
-		D4A8B2C6E1F59A3B7C0D4E8F /* TagRecommendationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRecommendationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -90,7 +90,7 @@
 				C2096EEAAF0AEDE7E341A94A /* PhotoLibraryService.swift */,
 				88D609E0E3FD0C76200FB71D /* PhotosAppMonitor.swift */,
 				097BD58AC39ED0A66FF1D601 /* PhotosDatabaseService.swift */,
-				D4A8B2C6E1F59A3B7C0D4E8F /* TagRecommendationService.swift */,
+				B5E2FE9C78FA766DE5FDF758 /* TagRecommendationService.swift */,
 				9F3493BE90EAC52F7CA44CDA /* ThumbnailCache.swift */,
 				FC62D4FC5129D9B76652E90B /* VisionTaggingService.swift */,
 			);
@@ -158,12 +158,12 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					2768E710FA0D9F6EF176FD5B = {
+						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = EBD7C27D6C1A35AAA5C60DA2 /* Build configuration list for PBXProject "BetterPhotos" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -172,6 +172,8 @@
 			);
 			mainGroup = CCB677D8D9CC869D3AEB8EA5;
 			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5224DAE36245C1B2BDD17BB9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -198,9 +200,9 @@
 				CE72C035895951C491DF1951 /* SettingsView.swift in Sources */,
 				B02F1B3C99A35F54003561E4 /* SidebarView.swift in Sources */,
 				3DA24A9D0A816D13CE8827E6 /* TagPanelView.swift in Sources */,
+				AD1E7638F45F7C82D490E505 /* TagRecommendationService.swift in Sources */,
 				180FD957F2F3BF04DEB596FA /* TagSuggestion.swift in Sources */,
 				BD81ED1ECBEFE625CF849619 /* ThumbnailCache.swift in Sources */,
-				A9B8C7D6E5F4A3B2C1D0E9F8 /* TagRecommendationService.swift in Sources */,
 				EE0F9B350189F560232ED410 /* VisionTaggingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,10 +345,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BetterPhotos/BetterPhotos.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = SGT3ZU26ZF;
 				ENABLE_APP_SANDBOX = NO;
 				INFOPLIST_FILE = BetterPhotos/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.betterphotos.app;
 				SDKROOT = macosx;
@@ -359,10 +362,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BetterPhotos/BetterPhotos.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = SGT3ZU26ZF;
 				ENABLE_APP_SANDBOX = NO;
 				INFOPLIST_FILE = BetterPhotos/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.betterphotos.app;
 				SDKROOT = macosx;
